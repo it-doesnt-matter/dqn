@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "dqn"
+version = "0.1.0"
+description = ""
+authors = ["it_doesnt_matter <<>>"]
+readme = "README.md"
+packages = [{include = "dqn", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+gymnasium = {extras = ["box2d"], version = "^0.27.1"}
+tqdm = "^4.65.0"
+pytz = "^2022.7.1"
+matplotlib = "3.5"
+opencv-python = "^4.7.0.72"
+poethepoet = "^0.19.0"
+mypy = "^1.1.1"
+
+[tool.poe.tasks]
+install_torch = "pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
